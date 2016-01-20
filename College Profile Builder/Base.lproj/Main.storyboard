@@ -44,7 +44,13 @@
                             <constraint firstItem="NIc-lp-3xs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gUS-lO-skV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gys-da-mll"/>
+                    <navigationItem key="navigationItem" id="gys-da-mll">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ego-CX-YBW">
+                            <connections>
+                                <action selector="onTappedPlusButton:" destination="BYZ-38-t0r" id="WJy-1y-wyb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="NIc-lp-3xs" id="JKD-q5-hnZ"/>
                     </connections>
