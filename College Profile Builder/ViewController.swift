@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+{
 
+    @IBOutlet weak var tableView: UITableView!
+    var colleges = ["University of Southern California", "University of Washington", "New York University"] 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
