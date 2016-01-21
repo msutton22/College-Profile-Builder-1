@@ -13,11 +13,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
-    var colleges = ["University of Southern California", "University of Washington", "New York University"]
+    var colleges : [College] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         editButton.tag = 0
+        colleges.append(College(name: "University of Washington", location: "Washington", numberOfStudents: 44786, image: UIImage(named: "UofW")!))
+        colleges.append(College(name: "New York University", location: "New York", numberOfStudents: 57245, image: UIImage(named: "nyu")!))
+        colleges.append(College(name: "University of Southern California", location: "California", numberOfStudents: 43000, image: UIImage(named: "USC")!))
     }
     
     @IBAction func onEditTapped(sender: UIBarButtonItem) {
@@ -39,7 +42,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alert.addAction(cancel)
         let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
             let collegeTextField = alert.textFields![0] as UITextField
-            self.colleges.append(collegeTextField.text!)
+            self.colleges.append(College(name: collegeTextField.text!))
             self.tableView.reloadData()
         }
         alert.addAction(addAction)
@@ -52,7 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath)
-        cell.textLabel?.text = colleges[indexPath.row]
+        cell.textLabel?.text = colleges[indexPath.row].name
         return cell
     }
     
