@@ -11,12 +11,24 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
 
+    @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     var colleges = ["University of Southern California", "University of Washington", "New York University"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        editButton.tag = 0
+    }
+    
+    @IBAction func onEditTapped(sender: UIBarButtonItem) {
+        if sender.tag == 0 {
+          tableView.editing = true
+            sender.tag = 1
+        }
+        else {
+            tableView.editing = false
+            sender.tag == 0
+        }
     }
     
     @IBAction func onTappedPlusButton(sender: UIBarButtonItem) {
@@ -50,5 +62,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tableView.reloadData()
         }
     }
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        let college = colleges[sourceIndexPath.row]
+        colleges.removeAtIndex(sourceIndexPath.row)
+        colleges.insert(college, atIndex: destinationIndexPath.row)
+    }
+    
 }
+
+//override func viewWillAppear(animated: Bool) {
+// super.viewWillAppear(animated)
+// tableView.reloadData()
+// }
 
