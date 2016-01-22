@@ -75,7 +75,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         colleges.removeAtIndex(sourceIndexPath.row)
         colleges.insert(college, atIndex: destinationIndexPath.row)
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! DetailViewController
+        let index = tableView.indexPathForSelectedRow?.row
+        dvc.college = colleges[index!]
+    }
 }
 
 //override func viewWillAppear(animated: Bool) {
