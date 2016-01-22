@@ -96,17 +96,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ucD-C0-jXp">
-                                <rect key="frame" x="180" y="245" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="0W2-Oz-fov"/>
-                                    <constraint firstAttribute="height" constant="150" id="4BW-ah-cA7"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bC6-E7-8Lx">
-                                <rect key="frame" x="283" y="399" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of Students" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1R-gK-SjT">
                                 <rect key="frame" x="252" y="175" width="97" height="30"/>
                                 <constraints>
@@ -115,17 +104,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u4-0A-P69">
-                                <rect key="frame" x="283" y="399" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u4-0A-P69">
+                                <rect key="frame" x="283" y="417" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="onTappedSavedButton:" destination="e2P-a3-skz" eventType="touchUpInside" id="cEV-a8-ItT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ucD-C0-jXp">
+                                <rect key="frame" x="180" y="259" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="0W2-Oz-fov"/>
+                                    <constraint firstAttribute="height" constant="150" id="4BW-ah-cA7"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bC6-E7-8Lx" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="0XG-yl-qDI"/>
+                            <constraint firstItem="8u4-0A-P69" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="6sx-2w-l2B"/>
                             <constraint firstItem="YWd-fN-LWO" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="Js2-bf-vuP"/>
                             <constraint firstItem="A1R-gK-SjT" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="KDi-R8-AcC"/>
                             <constraint firstItem="asK-Q9-46m" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="qoq-Bb-MXm"/>
