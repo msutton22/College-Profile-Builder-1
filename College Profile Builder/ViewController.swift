@@ -23,6 +23,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         colleges.append(College(name: "University of Southern California", location: "California", numberOfStudents: 43000, image: UIImage(named: "USC")!))
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+
+    
     @IBAction func onEditTapped(sender: UIBarButtonItem) {
         if sender.tag == 0 {
           tableView.editing = true
@@ -82,8 +88,4 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 }
 
-//override func viewWillAppear(animated: Bool) {
-// super.viewWillAppear(animated)
-// tableView.reloadData()
-// }
 
