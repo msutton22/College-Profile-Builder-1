@@ -65,6 +65,81 @@
             </objects>
             <point key="canvasLocation" x="1100" y="297"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="ACo-Ls-ygU">
+            <objects>
+                <viewController id="e2P-a3-skz" customClass="DetailViewController" customModule="College_Profile_Builder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Ic-NG-brT"/>
+                        <viewControllerLayoutGuide type="bottom" id="nta-1d-krs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oOf-CH-HXc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="College" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YWd-fN-LWO">
+                                <rect key="frame" x="252" y="87" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="HTU-nj-wlV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="asK-Q9-46m">
+                                <rect key="frame" x="252" y="130" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Pee-cc-wjz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ucD-C0-jXp">
+                                <rect key="frame" x="180" y="245" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="0W2-Oz-fov"/>
+                                    <constraint firstAttribute="height" constant="150" id="4BW-ah-cA7"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bC6-E7-8Lx">
+                                <rect key="frame" x="283" y="399" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of Students" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A1R-gK-SjT">
+                                <rect key="frame" x="252" y="175" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="SP5-KU-kpG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u4-0A-P69">
+                                <rect key="frame" x="283" y="399" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onTappedSavedButton:" destination="e2P-a3-skz" eventType="touchUpInside" id="cEV-a8-ItT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bC6-E7-8Lx" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="0XG-yl-qDI"/>
+                            <constraint firstItem="YWd-fN-LWO" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="Js2-bf-vuP"/>
+                            <constraint firstItem="A1R-gK-SjT" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="KDi-R8-AcC"/>
+                            <constraint firstItem="asK-Q9-46m" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="qoq-Bb-MXm"/>
+                            <constraint firstItem="ucD-C0-jXp" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="xvG-69-qOc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collegeTextField" destination="YWd-fN-LWO" id="aci-7o-Cve"/>
+                        <outlet property="imageView" destination="ucD-C0-jXp" id="AKg-n8-c5O"/>
+                        <outlet property="locationTextField" destination="asK-Q9-46m" id="GpJ-1s-hZZ"/>
+                        <outlet property="numOfStuTextField" destination="A1R-gK-SjT" id="x6b-0O-4Eh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sa-gF-d09" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1821" y="297"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="VN9-cl-OR4">
             <objects>
