@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
     }
     @IBAction func onTappedSavedButton(sender: AnyObject) {
         college.name = collegeTextField.text!
-        college.location = collegeTextField.text!
+        college.location = locationTextField.text!
         college.numberOfStudents = Int(numOfStuTextField.text!)!
     }
 }
