@@ -112,18 +112,45 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ucD-C0-jXp">
-                                <rect key="frame" x="180" y="259" width="240" height="128"/>
+                                <rect key="frame" x="180" y="263" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="0W2-Oz-fov"/>
                                     <constraint firstAttribute="height" constant="150" id="4BW-ah-cA7"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Website" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MwP-xM-pef">
+                                <rect key="frame" x="252" y="213" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPm-zA-O4f">
+                                <rect key="frame" x="351" y="212" width="30" height="30"/>
+                                <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="onGoPress:" destination="e2P-a3-skz" eventType="touchUpInside" id="frf-gy-tqs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NA1-ec-n2P">
+                                <rect key="frame" x="339" y="336" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="onTappedCamera:" destination="e2P-a3-skz" eventType="touchUpInside" id="4ks-kc-oSw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFW-BZ-wiS">
+                                <rect key="frame" x="342" y="305" width="48" height="30"/>
+                                <state key="normal" title="Library"/>
+                                <connections>
+                                    <action selector="onTappedLibrary:" destination="e2P-a3-skz" eventType="touchUpInside" id="gUi-Rr-8sa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8u4-0A-P69" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="6sx-2w-l2B"/>
                             <constraint firstItem="YWd-fN-LWO" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="Js2-bf-vuP"/>
                             <constraint firstItem="A1R-gK-SjT" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="KDi-R8-AcC"/>
+                            <constraint firstItem="MwP-xM-pef" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="foB-U8-gWe"/>
                             <constraint firstItem="asK-Q9-46m" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="qoq-Bb-MXm"/>
                             <constraint firstItem="ucD-C0-jXp" firstAttribute="centerX" secondItem="oOf-CH-HXc" secondAttribute="centerX" id="xvG-69-qOc"/>
                         </constraints>
@@ -133,6 +160,7 @@
                         <outlet property="imageView" destination="ucD-C0-jXp" id="AKg-n8-c5O"/>
                         <outlet property="locationTextField" destination="asK-Q9-46m" id="GpJ-1s-hZZ"/>
                         <outlet property="numOfStuTextField" destination="A1R-gK-SjT" id="x6b-0O-4Eh"/>
+                        <outlet property="websiteTextField" destination="MwP-xM-pef" id="7yy-Pn-qTJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sa-gF-d09" userLabel="First Responder" sceneMemberID="firstResponder"/>
