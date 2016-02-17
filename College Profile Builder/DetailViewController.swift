@@ -27,6 +27,13 @@ let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "mapSegue") {
+            var svc = segue!.destinationViewController as! MapViewController;
+            svc.toPass = locationTextField.text
+        }
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true) { () -> Void in
             let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
@@ -63,7 +70,10 @@ let imagePicker = UIImagePickerController()
 
     }
     
-    }
+
+        }
+    
+
     
 
     
