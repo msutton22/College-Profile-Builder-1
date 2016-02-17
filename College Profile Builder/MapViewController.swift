@@ -27,11 +27,26 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         geocoder.geocodeAddressString(locationName) { (placemarks, error) -> Void in
             if error != nil  {
                 print(error)
-                
             }
             else {
+                
+                if placemarks!.count > 1 {
+                    let alert = UIAlertController(title: "Select a Location", message: nil, preferredStyle: .ActionSheet)
+                    for placemark in placemarks! {
+                        let locationAction = UIAlertAction(title: placemark.name!, style: .Default, handler: { (action) -> Void in
+                            self.displayMap(placemark)
+                        })
+                        alert.addAction(locationAction)
+                    }
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                    alert.addAction(cancelAction)
+                    self.presentViewController(alert, animated: true, completion: nil)
+
+            }
+            else if placemarks?.count == 1 {
                 let placemark = placemarks!.first as CLPlacemark!
                 self.displayMap(placemark)
+            }
             }
         }
     }
