@@ -22,7 +22,7 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         findLocation("\(toPass)")
     }
     
-    func findLocation(locationName: String) {
+    func findLocation(_ locationName: String) {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(locationName) { (placemarks, error) -> Void in
             if error != nil  {
@@ -31,27 +31,27 @@ class MapViewController: UIViewController, UITextFieldDelegate {
             else {
                 
                 if placemarks!.count > 1 {
-                    let alert = UIAlertController(title: "Select a Location", message: nil, preferredStyle: .ActionSheet)
+                    let alert = UIAlertController(title: "Select a Location", message: nil, preferredStyle: .actionSheet)
                     for placemark in placemarks! {
-                        let locationAction = UIAlertAction(title: placemark.name!, style: .Default, handler: { (action) -> Void in
+                        let locationAction = UIAlertAction(title: placemark.name!, style: .default, handler: { (action) -> Void in
                             self.displayMap(placemark)
                         })
                         alert.addAction(locationAction)
                     }
-                    let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
                     alert.addAction(cancelAction)
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    self.present(alert, animated: true, completion: nil)
 
             }
             else if placemarks?.count == 1 {
                 let placemark = placemarks!.first as CLPlacemark!
-                self.displayMap(placemark)
+                self.displayMap(placemark!)
             }
             }
         }
     }
     
-    func displayMap(placemark: CLPlacemark) {
+    func displayMap(_ placemark: CLPlacemark) {
         textField.text = placemark.name
         let center = placemark.location!.coordinate
         let span = MKCoordinateSpanMake(0.05, 0.05)
@@ -64,7 +64,7 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let locationName = textField.text!
         textField.resignFirstResponder()
         findLocation(locationName)

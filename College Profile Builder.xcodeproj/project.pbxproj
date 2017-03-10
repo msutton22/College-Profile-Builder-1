@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F2080C31C51564E009FB1D4 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2080C21C51564E009FB1D4 /* College.swift */; settings = {ASSET_TAGS = (); }; };
-		3F2080C51C515B51009FB1D4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2080C41C515B51009FB1D4 /* DetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		3F67B90B1C739B890076843B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67B90A1C739B890076843B /* MapViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		3F2080C31C51564E009FB1D4 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2080C21C51564E009FB1D4 /* College.swift */; };
+		3F2080C51C515B51009FB1D4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2080C41C515B51009FB1D4 /* DetailViewController.swift */; };
+		3F67B90B1C739B890076843B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67B90A1C739B890076843B /* MapViewController.swift */; };
 		3F9A12C31C4FFD6200419632 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9A12C21C4FFD6200419632 /* AppDelegate.swift */; };
 		3F9A12C51C4FFD6200419632 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9A12C41C4FFD6200419632 /* ViewController.swift */; };
 		3F9A12C81C4FFD6200419632 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F9A12C61C4FFD6200419632 /* Main.storyboard */; };
@@ -202,15 +202,18 @@
 					3F9A12BE1C4FFD6200419632 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 94YMPFH76C;
+						LastSwiftMigration = 0810;
 					};
 					3F9A12D21C4FFD6200419632 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 94YMPFH76C;
+						LastSwiftMigration = 0810;
 						TestTargetID = 3F9A12BE1C4FFD6200419632;
 					};
 					3F9A12DD1C4FFD6200419632 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 94YMPFH76C;
+						LastSwiftMigration = 0810;
 						TestTargetID = 3F9A12BE1C4FFD6200419632;
 					};
 				};
@@ -417,6 +420,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BHS.College-Profile-Builder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -428,6 +432,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BHS.College-Profile-Builder";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -439,6 +444,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BHS.College-Profile-BuilderTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/College Profile Builder.app/College Profile Builder";
 			};
 			name = Debug;
@@ -451,6 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BHS.College-Profile-BuilderTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/College Profile Builder.app/College Profile Builder";
 			};
 			name = Release;
@@ -462,6 +469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BHS.College-Profile-BuilderUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "College Profile Builder";
 				USES_XCTRUNNER = YES;
 			};
@@ -474,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "BHS.College-Profile-BuilderUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "College Profile Builder";
 				USES_XCTRUNNER = YES;
 			};

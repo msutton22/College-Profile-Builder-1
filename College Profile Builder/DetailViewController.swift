@@ -27,28 +27,28 @@ let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue!, sender: Any!) {
         if (segue.identifier == "mapSegue") {
-            var svc = segue!.destinationViewController as! MapViewController;
+            let svc = segue!.destination as! MapViewController;
             svc.toPass = locationTextField.text
         }
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        imagePicker.dismissViewControllerAnimated(true) { () -> Void in
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imagePicker.dismiss(animated: true) { () -> Void in
             let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
             self.imageView.image = selectedImage
         }
     }
 
-    @IBAction func onGoPress(sender: AnyObject) {
-        let url = NSURL(string: String(websiteTextField.text!))
-        let svc = SFSafariViewController(URL: url!)
+    @IBAction func onGoPress(_ sender: AnyObject) {
+        let url = URL(string: String(websiteTextField.text!))
+        let svc = SFSafariViewController(url: url!)
         svc.delegate = self
-        self.presentViewController(svc, animated: true, completion: nil)
+        self.present(svc, animated: true, completion: nil)
 
     }
-    @IBAction func onTappedSavedButton(sender: AnyObject) {
+    @IBAction func onTappedSavedButton(_ sender: AnyObject) {
         college.name = collegeTextField.text!
         college.location = locationTextField.text!
         college.numberOfStudents = Int(numOfStuTextField.text!)!
@@ -56,15 +56,15 @@ let imagePicker = UIImagePickerController()
         college.image = imageView.image
     }
     
-    @IBAction func onTappedLibrary(sender: AnyObject) {
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        presentViewController(imagePicker, animated: true, completion: nil)
+    @IBAction func onTappedLibrary(_ sender: AnyObject) {
+        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        present(imagePicker, animated: true, completion: nil)
             }
 
-    @IBAction func onTappedCamera(sender: AnyObject) {
-        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-            presentViewController(imagePicker, animated: true, completion: nil)
+    @IBAction func onTappedCamera(_ sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+            present(imagePicker, animated: true, completion: nil)
         }
 
 

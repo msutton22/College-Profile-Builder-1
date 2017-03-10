@@ -23,66 +23,66 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         colleges.append(College(name: "University of Southern California", location: "Los Angeles, CA", numberOfStudents: 43000, image: UIImage(named: "USC")!, website: "http://www.usc.edu"))
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
 
-    @IBAction func onEditTapped(sender: UIBarButtonItem) {
+    @IBAction func onEditTapped(_ sender: UIBarButtonItem) {
         if sender.tag == 0 {
-          tableView.editing = true
+          tableView.isEditing = true
             sender.tag = 1
         }
         else {
-            tableView.editing = false
+            tableView.isEditing = false
             sender.tag == 0
         }
     }
     
-    @IBAction func onTappedPlusButton(sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in textField.placeholder = "Add College Here"
+    @IBAction func onTappedPlusButton(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .alert)
+        alert.addTextField{(textField) -> Void in textField.placeholder = "Add College Here"
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancel)
-        let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
+        let addAction = UIAlertAction(title: "Add", style: .default) { (action) -> Void in
             let collegeTextField = alert.textFields![0] as UITextField
             self.colleges.append(College(name: collegeTextField.text!))
             self.tableView.reloadData()
         }
         alert.addAction(addAction)
-        self.presentViewController(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return colleges.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
         cell.textLabel?.text = colleges[indexPath.row].name
         return cell
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            colleges.removeAtIndex(indexPath.row)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            colleges.remove(at: indexPath.row)
             tableView.reloadData()
         }
     }
     
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let college = colleges[sourceIndexPath.row]
-        colleges.removeAtIndex(sourceIndexPath.row)
-        colleges.insert(college, atIndex: destinationIndexPath.row)
+        colleges.remove(at: sourceIndexPath.row)
+        colleges.insert(college, at: destinationIndexPath.row)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dvc = segue.destinationViewController as! DetailViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! DetailViewController
         let index = tableView.indexPathForSelectedRow?.row
         dvc.college = colleges[index!]
     }
